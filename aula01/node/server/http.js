@@ -12,6 +12,6 @@ const requisicaoPadrao = (_, resposta) => {
 const server = http.createServer(requisicaoPadrao);
 
 // roda o servidor na porta 3000 e ao concluir a subida, informa via função anônima
-server.listen(3000, _ => {
-    console.log('Servidor no ar na porta 3000');
+server.listen(4000, _ => {
+    console.log('Servidor no ar na porta 4000');
 });
