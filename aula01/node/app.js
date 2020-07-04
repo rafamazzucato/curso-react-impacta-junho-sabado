@@ -4,6 +4,7 @@ const {exibirMensagem}  = require('./modulo2');
 mod1('Meu primeiro módulo');
 exibirMensagem('Meu segundo módulo');
 
+// ordem de utilização de keyword para variaveis
 // const
 // let
 // var
