@@ -1,9 +1,10 @@
 import React from 'react';
+import { Cabecalho } from '../../componentes/cabecalho';
 
 export const ContatoPage = props => {
     return (
         <div className="container">
-            <h1>Classe Contato</h1>
+            <Cabecalho titulo="Contato" subtitulo="entre em contato conosco"/>
         </div>
     );
 }
