@@ -9,16 +9,25 @@ export const CursoListagem = props => {
             <tr key={curso._id}>
                 <td>{curso.codigo}</td>
                 <td>{curso.descricao}</td>
-                <td>
-                    <button className="btn btn-success mr-2"
-                        onClick={() => props.editar(curso)}>
-                        <i className="fa fa-check"></i>
-                    </button>
-                    <button className="btn btn-danger"
-                        onClick={() => props.excluir(curso._id)}>
-                        <i className="fa fa-trash-o"></i>
-                    </button>
-                </td>
+
+                {props.isAdmin ?
+                    <td>
+                        <button className="btn btn-success mr-2"
+                            onClick={() => props.editar(curso)}>
+                            <i className="fa fa-check"></i>
+                        </button>
+                        <button className="btn btn-danger"
+                            onClick={() => props.excluir(curso._id)}>
+                            <i className="fa fa-trash-o"></i>
+                        </button>
+                    </td>
+                :
+                    <>
+                        <td>{curso.cargaHoraria}</td>
+                        <td>{curso.preco}</td>
+                        <td>{curso.categoria}</td>
+                    </>
+                }
             </tr>
         ));
     }
@@ -30,7 +39,13 @@ export const CursoListagem = props => {
                     <tr>
                         <th>Código</th>
                         <th>Descrição</th>
-                        <th></th>
+                        {props.isAdmin ? <th></th> :
+                            <>
+                                <th>Carga horária</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
+                            </>
+                        }
                     </tr>
                 </thead>
                 <tbody>
