@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
+
 import { Cabecalho } from '../componentes/cabecalho';
 import { CursoListagem } from '../componentes/cursos/lista';
 
 import axios from 'axios';
-
 const URL = 'http://localhost:3200/api/cursos';
 
 export const HomePage = props => {
+    const {setData} = props;
 
     const [cursos, setCursos] = useState([]);
 
@@ -19,11 +20,11 @@ export const HomePage = props => {
         }
 
         getCursos();
-    }, [setCursos]);
+    }, [setCursos, setData]);
 
     return (
         <div className="container">
-            <Cabecalho titulo="ABC Cursos" subtitulo="seja bem vindo, ao maior site de cursos do Brasil"/>
+            <Cabecalho titulo="ABC Cursos" subtitulo={"seja bem vindo, ao maior site de cursos do Brasil"}/>
             <CursoListagem cursos={cursos} isAdmin={false}/>
         </div>
     );
