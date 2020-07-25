@@ -109,7 +109,7 @@ export function ContatoScreen() {
             {assuntoAlterado && isInputValid(assunto) && <Icon name='checkmark-circle' />}
             {assuntoAlterado && !isInputValid(assunto) && <Icon name='close-circle' />}
           </Item>
-          <Button iconLeft full rounded style={styles.marginButton} disabled={!formValid()}
+          <Button iconLeft full rounded style={[styles.marginButton, styles.button]} disabled={!formValid()}
             onPress={enviarContato}>
             <Icon name='home' />
             <Text style={[styles.buttonText, !formValid() && styles.buttonDisabled]}>Enviar</Text>
@@ -129,6 +129,9 @@ const styles = StyleSheet.create({
   },
   marginButton: {
     marginTop: '12%'
+  },
+  button: {
+    marginHorizontal: '10%'
   },
   buttonText: {
     color: '#fff',
