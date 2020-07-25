@@ -6,10 +6,12 @@ const INITIAL_STATE = {
     email: '',
     assunto: '',
     msgErro: '',
-    msgSucesso: ''
+    msgSucesso: '',
+    lista: []
 }
 
 const TYPE_CONTATO = 'TYPE_CONTATO';
+export const TYPE_CONTATO_SET_LISTA = TYPE_CONTATO +'_SET_LISTA';
 export const TYPE_CONTATO_SET_DATA = TYPE_CONTATO +'_SET_DATA';
 export const TYPE_CONTATO_SET_NOME = TYPE_CONTATO +'_SET_NOME';
 export const TYPE_CONTATO_SET_EMAIL = TYPE_CONTATO +'_SET_EMAIL';
@@ -27,6 +29,7 @@ export default function(state = INITIAL_STATE, acao){
         case TYPE_CONTATO_SET_MSG_SUCESSO: return {...state, msgSucesso: acao.value};
         case TYPE_CONTATO_SET_MSG_ERRO: return {...state, msgErro: acao.value};
         case TYPE_CONTATO_LIMPAR: return {...INITIAL_STATE};
+        case TYPE_CONTATO_SET_LISTA: return {...state, lista: acao.value}
         default: return state;
     }
 }
