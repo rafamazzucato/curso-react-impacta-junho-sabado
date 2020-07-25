@@ -25,10 +25,10 @@ const ContatoListagem = props => {
                 <td>{contato.assunto}</td>
                 <td>
                     <button className="btn btn-danger"
-                    onClick={() => excluirContato(contato._id)}
-                    >
+                    onClick={() => excluirContato(contato._id)}>
                         <i className="fa fa-trash-o"></i>
-                    </button></td>
+                    </button>
+                </td>
             </tr>
         ));
     }
