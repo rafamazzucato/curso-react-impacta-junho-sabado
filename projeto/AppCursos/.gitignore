@@ -1,10 +1,6 @@
-node_modules/
-package-lock.json
-aula02/
-aula05/
-
 node_modules/**/*
 .expo/*
+.expo-shared/*
 npm-debug.*
 *.jks
 *.p8
